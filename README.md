@@ -15,3 +15,5 @@ Integrantes:
 - Alexis Sanz
 
 - Santiago Chaves
+
+- Pedro Bennato
