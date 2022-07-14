@@ -11,9 +11,11 @@ def leerJSON(nombreJSON):
             return tps
     except FileNotFoundError:
         print("No se encontró el archivo JSON")
+        exit(0)
 
     except ValidationError as e:
         print("El JSON esta mal formado,", e)
+        exit(1)
 
 def handlerTipoCliente(tipo, tps):
         if tipo=="CLASSIC":
@@ -54,13 +56,7 @@ def generarHTML(tps, rechazo):
 
     with open("reporte.html", "w") as file:
         file.write(template.render(tps=tps, rechazo=rechazo))
-
-
-
-
-
-
-
+        
 
 schema = {
     "type": "object",

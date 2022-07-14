@@ -5,12 +5,6 @@ class Cliente:
         self.numero = numero
         self.dni = dni
         self.transacciones = transacciones
-    
-    def retirar(cantidad):
-        pass
-
- 
-
 
 class Classic(Cliente):
     comision = 0.01
@@ -35,17 +29,13 @@ class Classic(Cliente):
         if monto > self.transferenciaMaxima:
             return "El monto es mayor al limite por transferencias ($150000)"
 
-    
     def puedeRetirar(self, monto, saldoEnCuenta, cupoDiarioRestante):
         if monto > saldoEnCuenta:
             return "El monto execede el dinero en cuenta"
         if monto > cupoDiarioRestante:
             return "El monto execede el cupo diario restante"
         return True
-    
-   
 
-    
  
 class Gold(Cliente):
     comision = 0.005
@@ -57,7 +47,6 @@ class Gold(Cliente):
         if(cantChequeras < 1):
             return True
         return "Ya superas el limite de chequeras (1)"
-
 
     def puedeCrearTarjeta(self, cantTarjetas):
         if(cantTarjetas < 1):
